@@ -1,0 +1,61 @@
+
+  {
+    "turnOffTrouble": {
+      "nameOfTrouble": "Компьютер не включается",
+      "questions": [
+        {
+          "question": "a",
+          "solve": "b",
+          "rightButtonText": "M",
+          "leftButtonText": "g"
+        },
+        {
+          "question": "c",
+          "solve": "",
+          "rightButtonText": "M",
+          "leftButtonText": "g"
+        },
+        {
+          "question": "d",
+          "solve": "",
+          "rightButtonText": "M",
+          "leftButtonText": "g"
+        },
+        {
+          "question": "e",
+          "solve": "f",
+          "rightButtonText": "M",
+          "leftButtonText": "g"
+        }
+      ]
+    },
+    "screenTrouble": {
+      "nameOfTrouble": "Экран при включении черный",
+      "questions": [
+        {
+          "question": "",
+          "solve": "",
+          "rightButtonText": "M",
+          "leftButtonText": "g"
+        },
+        {
+          "question": "",
+          "solve": "",
+          "rightButtonText": "M",
+          "leftButtonText": "g"
+        },
+        {
+          "question": "",
+          "solve": "",
+          "rightButtonText": "M",
+          "leftButtonText": "g"
+        },
+        {
+          "question": "",
+          "solve": "",
+          "rightButtonText": "M",
+          "leftButtonText": "g"
+        }
+      ]
+    }
+  }
