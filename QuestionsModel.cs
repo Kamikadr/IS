@@ -8,8 +8,8 @@ namespace IS
 {
     class QuestionsModel
     {
-        public Trouble turnOffTrouble { get; set; } 
-        public Trouble screenTrouble { get; set; }
+        public List<Trouble> H_Problems { get; set; } 
+        public List<Trouble> S_Problems { get; set; }
     }
     class Trouble 
     {
