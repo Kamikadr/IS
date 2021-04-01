@@ -42,7 +42,6 @@ namespace DTPC
                 arrButtonHardware[i].Size = new Size(830, 100);
                 arrButtonHardware[i].Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
                 arrButtonHardware[i].Padding = new Padding (20);
-                arrButtonHardware[i].AutoSize = true;
                 arrButtonHardware[i].Name = 'H'+i.ToString();
                 arrButtonHardware[i].Click += new EventHandler(button_Click);
                 this.panelHardware.Controls.Add(arrButtonHardware[i]);
@@ -51,7 +50,7 @@ namespace DTPC
             for (int i = 0; i < questionsModel.S_Problems.Length; i++)
             {
                 arrButtonSoftware[i] = new Button();
-                arrButtonSoftware[i].Text = questionsModel.H_Problems[i].nameOfTrouble;
+                arrButtonSoftware[i].Text = questionsModel.S_Problems[i].nameOfTrouble;
                 arrButtonSoftware[i].Location = new Point(0, 120 * i);
                 arrButtonSoftware[i].BackColor = System.Drawing.SystemColors.ControlDark;
                 arrButtonSoftware[i].FlatAppearance.BorderSize = 0;
@@ -59,7 +58,6 @@ namespace DTPC
                 arrButtonSoftware[i].Size = new Size(830, 100);
                 arrButtonSoftware[i].Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
                 arrButtonSoftware[i].Padding = new Padding(20);
-                arrButtonSoftware[i].AutoSize = true;
                 arrButtonSoftware[i].Name = 'S' + i.ToString();
                 arrButtonSoftware[i].Click += new EventHandler(button_Click);
                 this.panelSoftware.Controls.Add(arrButtonSoftware[i]);
