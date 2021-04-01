@@ -48,6 +48,8 @@ namespace DTPC
             this.panelTxt = new System.Windows.Forms.Panel();
             this.buttonBack = new System.Windows.Forms.Button();
             this.buttonMenu = new System.Windows.Forms.Button();
+            this.buttonServ = new System.Windows.Forms.Button();
+            this.labelServ = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelWelcom
@@ -95,7 +97,7 @@ namespace DTPC
             // 
             this.panelSoftware.AutoScroll = true;
             this.panelSoftware.Location = new System.Drawing.Point(12, 12);
-            this.panelSoftware.Name = "panelHardware";
+            this.panelSoftware.Name = "panelSoftware";
             this.panelSoftware.Size = new System.Drawing.Size(1108, 400);
             this.panelSoftware.TabIndex = 1;
             this.panelSoftware.Visible = false;
@@ -111,27 +113,54 @@ namespace DTPC
             // 
             // buttonBack
             // 
-            this.buttonBack.Location = new System.Drawing.Point(968, 418);
             this.buttonBack.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
+            this.buttonBack.Location = new System.Drawing.Point(968, 418);
             this.buttonBack.Name = "buttonBack";
             this.buttonBack.Size = new System.Drawing.Size(152, 64);
             this.buttonBack.TabIndex = 2;
             this.buttonBack.Text = "Назад";
             this.buttonBack.UseVisualStyleBackColor = true;
-            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             this.buttonBack.Visible = false;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
             // 
             // buttonMenu
             // 
-            this.buttonMenu.Location = new System.Drawing.Point(12, 418);
             this.buttonMenu.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.buttonMenu.Location = new System.Drawing.Point(12, 418);
             this.buttonMenu.Name = "buttonMenu";
             this.buttonMenu.Size = new System.Drawing.Size(152, 64);
             this.buttonMenu.TabIndex = 3;
             this.buttonMenu.Text = "В главное меню";
             this.buttonMenu.UseVisualStyleBackColor = true;
-            this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
             this.buttonMenu.Visible = false;
+            this.buttonMenu.Click += new System.EventHandler(this.buttonMenu_Click);
+            // 
+            // buttonServ
+            // 
+            this.buttonServ.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.buttonServ.Location = new System.Drawing.Point(686, 418);
+            this.buttonServ.Name = "buttonServ";
+            this.buttonServ.Size = new System.Drawing.Size(200, 64);
+            this.buttonServ.TabIndex = 4;
+            this.buttonServ.Text = "Ничего из выше перечисленного не помогло";
+            this.buttonServ.UseVisualStyleBackColor = true;
+            this.buttonServ.Visible = false;
+            this.buttonServ.Click += new System.EventHandler(this.buttonServ_Click);
+            // 
+            // labelServ
+            // 
+            this.labelServ.AutoSize = true;
+            this.labelServ.BackColor = System.Drawing.SystemColors.Info;
+            this.labelServ.Font = new System.Drawing.Font("Tahoma", 14F, System.Drawing.FontStyle.Bold);
+            this.labelServ.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.labelServ.Location = new System.Drawing.Point(340, 235);
+            this.labelServ.Name = "labelServ";
+            this.labelServ.Padding = new System.Windows.Forms.Padding(20);
+            this.labelServ.Size = new System.Drawing.Size(446, 69);
+            this.labelServ.TabIndex = 0;
+            this.labelServ.Text = "Обратитесь в сервисный центр" + '\n' + "(нажмите сюда, чтобы закрыть)";
+            //this.labelServ.Visible = false;
+            this.labelServ.Click += new System.EventHandler(this.labelServ_Click);
             // 
             // Form1
             // 
@@ -139,6 +168,8 @@ namespace DTPC
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1132, 494);
+            this.Controls.Add(this.labelServ);
+            this.Controls.Add(this.buttonServ);
             this.Controls.Add(this.buttonMenu);
             this.Controls.Add(this.buttonBack);
             this.Controls.Add(this.panelTxt);
@@ -147,8 +178,8 @@ namespace DTPC
             this.Controls.Add(this.buttonSoftware);
             this.Controls.Add(this.buttonHardware);
             this.Controls.Add(this.labelWelcom);
-            this.MaximizeBox = false;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "DTPC";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -167,6 +198,8 @@ namespace DTPC
         private Button buttonBack;
         private Button buttonMenu;
         private Panel panelSoftware;
+        private Button buttonServ;
+        private Label labelServ;
     }
 }
 

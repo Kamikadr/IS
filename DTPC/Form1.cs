@@ -63,6 +63,7 @@ namespace DTPC
                 arrButtonSoftware[i].Click += new EventHandler(button_Click);
                 this.panelSoftware.Controls.Add(arrButtonSoftware[i]);
             }
+            this.labelServ.Visible = false;
 
         }
         //событие по выбору характера проблемы, показывающее список проблем про hardware
@@ -195,6 +196,7 @@ namespace DTPC
                 this.panelHardware.Visible = false;
                 this.panelSoftware.Visible = false;
                 this.buttonBack.Visible = true;
+                this.buttonServ.Visible = true;
             }
         }
         //событие на нажатие кнопки назад, которое показывает возможное решение проблемы
@@ -226,6 +228,7 @@ namespace DTPC
             this.labelWelcom.Visible = true;
             this.buttonMenu.Visible = false;
             this.buttonBack.Visible = false;
+            this.buttonServ.Visible = false;
 
         }
         //событие на нажатие кнопки назад для возвращения к списку проблем
@@ -243,6 +246,19 @@ namespace DTPC
                 this.panelSoftware.Visible = true;
             }
             this.buttonBack.Visible = false;
+            this.buttonServ.Visible = false;
+        }
+        //вызов сервисного окна
+        private void buttonServ_Click(object sender, EventArgs e)
+        {
+            this.labelServ.Visible = true;
+
+
+        }
+        //убрать сервисное окно
+        private void labelServ_Click(object sender, EventArgs e)
+        {
+            this.labelServ.Visible = false;
         }
     }
 }
