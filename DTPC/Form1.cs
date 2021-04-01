@@ -143,7 +143,9 @@ namespace DTPC
                 }
                 this.panelTxt.Visible = true;
                 this.panelHardware.Visible = false;
+                this.panelSoftware.Visible = false;
                 this.buttonBack.Visible = true;
+                this.buttonServ.Visible = true;
             }
             else
             {
