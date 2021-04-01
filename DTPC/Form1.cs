@@ -20,13 +20,14 @@ namespace DTPC
         {
             InitializeComponent();
         }
-
+        //парс jSON файла
         private void readJson()
         {
             string path = Directory.GetCurrentDirectory() + @"\Questions.json";
             string jsonText = File.ReadAllText(path, System.Text.Encoding.GetEncoding(1251));
             questionsModel = JsonConvert.DeserializeObject<QuestionsModel>(jsonText);
         }
+        //загрузка form(событие), инициализация panel для software и hardware, создание событие для этих panel
         private void Form1_Load(object sender, EventArgs e)
         {
             readJson();
@@ -64,6 +65,7 @@ namespace DTPC
             }
 
         }
+        //событие по выбору характера проблемы, показывающее список проблем про hardware
         private void buttonHardware_Click(object sender, EventArgs e)
         {
             this.buttonHardware.Visible = false;
@@ -74,6 +76,7 @@ namespace DTPC
             this.buttonMenu.Visible = true;
             softOrHard = true;
         }
+        //событие по выбору характера проблемы, показывающее список проблем про software
         private void buttonSoftware_Click(object sender, EventArgs e)
         {
             this.buttonHardware.Visible = false;
@@ -84,7 +87,7 @@ namespace DTPC
             this.buttonMenu.Visible = true;
             softOrHard = false;
         }
-
+        //событие на выбор проблемы, показывающее вопросы по проблеме
         void button_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
@@ -92,8 +95,10 @@ namespace DTPC
             panelTxt.Controls.Clear();
             if (button.Name[0]=='H')
             {
+                //парс название кнопки для идентификации проблемы
                 string strIndex = button.Name.Remove(0, 1);
                 int LastYPoint = 0, index = Convert.ToInt32(strIndex);
+                //внесение проблем с hardware на panelTxt
                 for (int i = 0; i < questionsModel.H_Problems[index].questions.Length; i++)
                 {
                     Label questionTxt = new Label();
@@ -141,8 +146,10 @@ namespace DTPC
             }
             else
             {
+                //парс название кнопки для идентификации проблемы
                 string strIndex = button.Name.Remove(0, 1);
                 int LastYPoint = 0, index = Convert.ToInt32(strIndex);
+                //внесение проблем с software на panelTxt
                 for (int i = 0; i < questionsModel.S_Problems[index].questions.Length; i++)
                 {
                     Label questionTxt = new Label();
@@ -190,10 +197,12 @@ namespace DTPC
                 this.buttonBack.Visible = true;
             }
         }
+        //событие на нажатие кнопки назад, которое показывает возможное решение проблемы
         void spoilerBut_Click(object sender, EventArgs e)
         {
             Button button = (Button)sender;
             int index = Convert.ToInt32(button.Name)*3+2;
+            //идентификации software или hardware 
             if (this.panelTxt.Controls[index].Visible)
             {
                 this.panelTxt.Controls[index].Visible = false;
@@ -206,7 +215,7 @@ namespace DTPC
             }
             
         }
-
+        //событие на нажатие кнопки в главное меню, которое открывает самый первоначальный вид программы
         private void buttonMenu_Click(object sender, EventArgs e)
         {
             this.panelTxt.Visible = false;
@@ -219,7 +228,7 @@ namespace DTPC
             this.buttonBack.Visible = false;
 
         }
-
+        //событие на нажатие кнопки назад для возвращения к списку проблем
         private void buttonBack_Click(object sender, EventArgs e)
         {
             this.panelTxt.Visible = false;
